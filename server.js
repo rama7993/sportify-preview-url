@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const spotifyRoutes = require("./routes/spotify");
+const { getCorsOptions } = require("./config/cors");
 
 dotenv.config();
 
@@ -9,12 +10,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
-app.use(
-  cors({
-    origin: ["http://localhost:4200", process.env.CORS_ORIGIN].filter(Boolean),
-    credentials: true,
-  })
-);
+app.use(cors(getCorsOptions()));
 app.use(express.json());
 
 // Routes
