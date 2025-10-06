@@ -37,11 +37,11 @@ router.post("/preview", async (req, res) => {
       });
     }
 
-    console.log(
-      `🔍 Searching for preview: "${trackName}" by "${
-        artistName || "Unknown Artist"
-      }"`
-    );
+    // console.log(
+    //   `🔍 Searching for preview: "${trackName}" by "${
+    //     artistName || "Unknown Artist"
+    //   }"`
+    // );
 
     // Create search query combining track name and artist
     const searchQuery = artistName ? `${trackName} ${artistName}` : trackName;
